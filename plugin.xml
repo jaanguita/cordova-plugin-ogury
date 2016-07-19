@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.marfeel.ogury"
+    version="0.1">
+      
+    <name>Ogury</name>
+    <description>Cordova Plugin for Ogury</description>
+    <author>Marfeel</author>
+    <license>MIT</license>
+    <keywords>ogury,marfeel,cordova</keywords>
+    <repo>https://github.com/.git</repo>
+    <issue>https://github.com/issues</issue>
+
+    <engines>
+        <engine name="cordova" version=">=3.5" />
+    </engines>
+
+    <js-module src="www/CPressage.js" name="CPressage">
+        <clobbers target="window.CPressage" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CPressage">
+                <param name="android-package" value="com.marfeel.ogury"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/CPressage.java" target-dir="src/com/marfeel/ogury" />
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+              <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation"/>
+
+                <meta-data android:name="presage_key" android:value="API_KEY_HERE"/>
+                <service android:name="io.presage.services.PresageServiceImp"/>
+                <activity android:name="io.presage.activities.PresageActivity"
+                  android:label="@string/app_name"
+                  android:theme="@style/Presage.Theme.Transparent"
+                  android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+                  android:hardwareAccelerated="true" >
+                    <intent-filter>
+                      <action android:name="io.presage.intent.action.LAUNCH_WEBVIEW" />
+                        <category android:name="android.intent.category.DEFAULT" />
+                    </intent-filter>
+                </activity>
+                <receiver android:name="io.presage.receivers.BootReceiver">
+                    <intent-filter>
+                        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                        <action android:name="android.intent.action.DATE_CHANGED"/>
+                        <action android:name="io.presage.receivers.BootReceiver.RESTART_SERVICE"/>
+                    </intent-filter>
+                </receiver>
+
+          </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+              <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+          
+        <config-file target="styles.xml" parent="/res/values">
+            <style name="Presage.Theme.Transparent" parent="android:Theme">
+                <item name="android:windowIsTranslucent">true</item>
+                <item name="android:windowBackground">@android:color/transparent</item>
+                <item name="android:windowContentOverlay">@null</item>
+                <item name="android:windowNoTitle">true</item>
+                <item name="android:backgroundDimEnabled">false</item>
+            </style>
+        </config-file>
+
+        <config-file target="config.xml" parent="/*">
+            <gap:platform name="android">
+                <gap:feature name="CPresage">
+                    <param name="android-package" value="io.presage.CPresage"/>
+                    <param name="onload" value="true" />
+                </gap:feature>
+            </gap:platform>
+        </config-file>
+
+        <source-file src="src/android/presage-lib-1.8.1.jar" target-dir="libs" />
+     </platform>
+</plugin>
