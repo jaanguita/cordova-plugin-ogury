@@ -21,6 +21,15 @@
         <clobbers target="window.CPresage" />
     </js-module>
 
+    <config-file target="config.xml" parent="/*">
+        <platform name="android">
+            <feature name="CPresage">
+                <param name="android-package" value="io.presage.CPresage"/>
+                <param name="onload" value="true" />
+            </feature>
+        </platform>
+    </config-file>
+
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
@@ -66,15 +75,6 @@
                 <item name="android:windowNoTitle">true</item>
                 <item name="android:backgroundDimEnabled">false</item>
             </style>
-        </config-file>
-
-        <config-file target="config.xml" parent="/*">
-            <platform name="android">
-                <feature name="CPresage">
-                    <param name="android-package" value="io.presage.CPresage"/>
-                    <param name="onload" value="true" />
-                </feature>
-            </platform>
         </config-file>
 
         <source-file src="src/android/presage-lib-1.8.1.jar" target-dir="libs" />
