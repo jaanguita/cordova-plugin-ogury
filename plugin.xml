@@ -68,13 +68,13 @@
             </style>
         </config-file>
 
-        <config-file target="config.xml" parent="/">
-            <gap:platform name="android">
-                <gap:feature name="CPresage">
+        <config-file target="config.xml" parent="/*">
+            <platform name="android">
+                <feature name="CPresage">
                     <param name="android-package" value="io.presage.CPresage"/>
                     <param name="onload" value="true" />
-                </gap:feature>
-            </gap:platform>
+                </feature>
+            </platform>
         </config-file>
 
         <source-file src="src/android/presage-lib-1.8.1.jar" target-dir="libs" />
