@@ -21,22 +21,17 @@
         <clobbers target="window.CPresage" />
     </js-module>
 
-    <config-file target="config.xml" parent="/*/platform">
-            <feature name="CPresage">
-                <param name="android-package" value="io.presage.CPresage"/>
-                <param name="onload" value="true" />
-            </feature>
-    </config-file>
-
     <!-- android -->
     <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="CPresage">
-                <param name="android-package" value="com.marfeel.ogury"/>
-            </feature>
-        </config-file>
         <source-file src="src/android/CPresage.java" target-dir="src/com/marfeel/ogury" />
         
+        <config-file target="config.xml" parent="/*">
+                <feature name="CPresage">
+                    <param name="android-package" value="io.presage.CPresage"/>
+                    <param name="onload" value="true" />
+                </feature>
+        </config-file>
+
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
               <activity android:name="com.mopub.mobileads.MoPubActivity" android:configChanges="keyboardHidden|orientation"/>
 
