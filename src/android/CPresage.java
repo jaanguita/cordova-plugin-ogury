@@ -51,7 +51,7 @@ public class CPresage extends CordovaPlugin {
     {
 	cordova.getActivity().runOnUiThread(new Runnable() {
 		public void run() {
-		    Presage.getInstance().loadInterstitial();
+		    //Presage.getInstance().loadInterstitial();
 		}
 	    });
     }
@@ -60,7 +60,7 @@ public class CPresage extends CordovaPlugin {
     {
 	cordova.getActivity().runOnUiThread(new Runnable() {
 		public void run() {
-		    Presage.getInstance().showInterstitial();
+		    //Presage.getInstance().showInterstitial();
 		}
 	    });
     }
