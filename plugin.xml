@@ -12,7 +12,7 @@
     <keywords>ogury,marfeel,cordova</keywords>
     <repo>https://github.com/.git</repo>
     <issue>https://github.com/issues</issue>
-    <preference name="API_KEY" />
+    <preference name="API_KEY" default="${oguryApiKey}"/>
 
     <engines>
         <engine name="cordova" version=">=3.5" />
