@@ -58,7 +58,8 @@
 
           </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
-              <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+            <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
           
         <source-file src="src/android/styles.xml" target-dir="res/values" />
