@@ -1,3 +1,5 @@
+var exec = require('cordova/exec');
+
 var CPresage = {
 
     presageInterstitial: {
@@ -52,3 +54,5 @@ var CPresage = {
         }
     }
 };
+
+module.exports = CPresage;
