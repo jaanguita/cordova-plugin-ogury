@@ -1,0 +1,38 @@
+{
+  "name": "cordova-plugin-ogury-181",
+  "description": "Ogury",
+  "version": "0.0.1",
+  "homepage": "https://github.com/Vdeub/cordova-plugin-ogury",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Vdeub/cordova-plugin-ogury.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vdeub/cordova-plugin-ogury/issues"
+  },
+  "cordova": {
+    "id": "vdeub.ogury.cordova",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "ecosystem:phonegap",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "engines": {
+
+  },
+  "author": "Vdeub",
+  "license": "MIT",
+  "scripts": {
+
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
